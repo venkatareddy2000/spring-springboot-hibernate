@@ -1,0 +1,40 @@
+<!DOCTYPE HTML>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+	<!-- Required meta tags -->
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+	<!-- Bootstrap CSS -->
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet"
+		integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+
+	<title>Login Page</title>
+</head>
+
+<body>
+	<form action="#" th:action="@{/authenticateTheUser}" th:method="POST">
+		<div class="container">
+			<h3>My Custom Login Page</h3>
+			<div th:if="${param.error}">
+				<div class="alert alert-danger col-xs-offset-1 col-xs-5" style="width: 280px;">
+					Invalid username and password
+				</div>
+			</div>
+			<div th:if="${param.logout}">
+				<div class="alert alert-success col-xs-offset-1 col-xs-5" style="width: 280px;">
+					You have been logged out
+				</div>
+			</div>
+			<input type="text" name="username" placeholder="User name" class="form-control mt-3 mb-4 w-25">
+			<input type="password" name="password" placeholder="Password" class="form-control mb-4 w-25">
+			<button type="submit" class="btn btn-success btn-sm col-2">Login</button>
+		</div>
+
+	</form>
+
+</body>
+
+
+</html>
